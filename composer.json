@@ -19,18 +19,11 @@
       "email": "pingpong.labs@gmail.com"
     }
   ],
-  "repositories": [
-  {
-    "type": "vcs",
-    "url": "https://github.com/COOLDEARK/html"
-  }
-  ],
  "require": {
     "php": "^7.3|^8.0|^8.1|^8.2",
     "illuminate/support": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
     "illuminate/config": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
-    "illuminate/view": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
-    "cooldeark/html": "dev-master"
+    "illuminate/view": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^8.5",
