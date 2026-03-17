@@ -3,7 +3,6 @@
 namespace Nwidart\Menus;
 
 use Closure;
-use Collective\Html\HtmlFacade as HTML;
 use Illuminate\Contracts\Support\Arrayable as ArrayableContract;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Request;
@@ -385,7 +384,19 @@ class MenuItem implements ArrayableContract
 
         Arr::forget($attributes, ['active', 'icon']);
 
-        return HTML::attributes($attributes);
+        $result = '';
+        foreach ($attributes as $key => $value) {
+            if (is_numeric($key)) {
+                $result .= ' ' . e($value);
+            } elseif (is_bool($value) && $key !== 'value') {
+                if ($value) {
+                    $result .= ' ' . $key;
+                }
+            } elseif (!is_null($value)) {
+                $result .= ' ' . $key . '="' . e($value) . '"';
+            }
+        }
+        return $result;
     }
 
     /**
